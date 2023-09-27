@@ -6,7 +6,7 @@ import altair as alt
 #### 品別売上
 """
 def drink_kind():
-    drink_data = pd.read_excel('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/sales_data/2022sales_data.xlsx', sheet_name='drink',
+    drink_data = pd.read_excel('management_support_app/data/sales_data/2022sales_data.xlsx', sheet_name='drink',
                             engine='openpyxl', index_col=0)
     # 行と列を入れ替える
     transposed_drink_data = drink_data.transpose()
@@ -32,7 +32,7 @@ def drink_kind():
             use_container_width=True)
 
 def meat_kind():
-    meat_data = pd.read_excel('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/sales_data/2022sales_data.xlsx',
+    meat_data = pd.read_excel('management_support_app/data/sales_data/2022sales_data.xlsx',
                             sheet_name='meat',
                             engine='openpyxl', index_col=0)
     # 行と列を入れ替える
@@ -59,7 +59,7 @@ def meat_kind():
             use_container_width=True)
 
 def sidemenu_kind():
-    meat_data = pd.read_excel('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/sales_data/2022sales_data.xlsx',
+    meat_data = pd.read_excel('management_support_app/data/sales_data/2022sales_data.xlsx',
                             sheet_name='sidemenu',
                             engine='openpyxl', index_col=0)
     # 行と列を入れ替える
@@ -89,7 +89,7 @@ def monthly_drink_sales():
     # タイトル
     st.markdown(' ### ドリンクメニュー売上数比較')
     # エクセルデータの読み込み
-    drink_data = pd.read_excel('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/sales_data/2022sales_data.xlsx', sheet_name='drink',
+    drink_data = pd.read_excel('management_support_app/data/sales_data/2022sales_data.xlsx', sheet_name='drink',
                                 engine='openpyxl', index_col=0)
     # 行と列を入れ替える
     transposed_drink_data = drink_data.transpose()
@@ -109,7 +109,7 @@ def monthly_meat_sales():
     # タイトル
     st.markdown(' ### 肉類売上数比較')
     # エクセルデータの読み込み
-    meat_data = pd.read_excel('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/sales_data/2022sales_data.xlsx',
+    meat_data = pd.read_excel('management_support_app/data/sales_data/2022sales_data.xlsx',
                                 sheet_name='meat',
                                 engine='openpyxl', index_col=0)
     # 行と列を入れ替える
@@ -130,7 +130,7 @@ def monthly_sidemenu_sales():
     # タイトル
     st.markdown(' ### サイドメニュー売上数比較')
     # エクセルデータの読み込み
-    sidemenu_data = pd.read_excel('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/sales_data/2022sales_data.xlsx',
+    sidemenu_data = pd.read_excel('management_support_app/data/sales_data/2022sales_data.xlsx',
                                 sheet_name='sidemenu',
                                 engine='openpyxl', index_col=0)
     # 行と列を入れ替える
