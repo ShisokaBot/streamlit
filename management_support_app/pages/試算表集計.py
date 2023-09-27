@@ -21,12 +21,12 @@ expander3.write('前年度のものは、別途、経理部にご確認くださ
 st.write('「利益金処分計算書」「附属明細表」は必要に応じて経理部にご確認ください。')
 
 # Image
-image = Image.open('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/img/financial_statements.png')
+image = Image.open('management_support_app/data/img/financial_statements.png')
 st.image(image)
 
 # 損益計算書
 st.markdown(' ### 前年度の損益試算表')
-pl_data = pd.read_excel('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/financial_data/2022financial_data.xlsx',
+pl_data = pd.read_excel('management_support_app/data/financial_data/2022financial_data.xlsx',
                         engine='openpyxl', index_col=0)
 st.dataframe(pl_data)
 
