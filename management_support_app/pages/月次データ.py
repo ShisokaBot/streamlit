@@ -2,10 +2,14 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
+xlsx = "management_support_app/data/sales_data/2022sales_data.xlsx"
+monthly_sales_comment_txt = "management_support_app/data/sales_data/monthly_sales_comment.txt"
+
 def monthly_drink_sales():
     #エクセルデータの読み込み
-    drink_data = pd.read_excel("./data/sales_data/2022sales_data.xlsx", sheet_name="drink", 
-                                    engine="openpyxl", index_col=0)
+    drink_data = pd.read_excel(xlsx, 
+                                sheet_name="drink", 
+                                engine="openpyxl", index_col=0)
     #販売月のセレクトボックスを作成
     select_month = st.selectbox("月を選んでください",
                                 drink_data.columns.values.tolist(),
@@ -31,7 +35,7 @@ def monthly_drink_sales():
 
 def monthly_meat_sales():
     #エクセルデータの読み込み
-    drink_data = pd.read_excel("./data/sales_data/2022sales_data.xlsx", sheet_name="meat", 
+    drink_data = pd.read_excel(xlsx, sheet_name="meat", 
                                     engine="openpyxl", index_col=0)
     #販売月のセレクトボックスを作成
     select_month = st.selectbox("月を選んでください",
@@ -58,7 +62,7 @@ def monthly_meat_sales():
 
 def monthly_sidemenu_sales():
     #エクセルデータの読み込み
-    drink_data = pd.read_excel("./data/sales_data/2022sales_data.xlsx", sheet_name="sidemenu", 
+    drink_data = pd.read_excel(xlsx, sheet_name="sidemenu", 
                                     engine="openpyxl", index_col=0)
     #販売月のセレクトボックスを作成
     select_month = st.selectbox("月を選んでください",
@@ -104,9 +108,9 @@ with st.form(key='monthly_sales_comment'):
     comment = st.text_input('コメントを記入してください')
     submit_btn = st.form_submit_button('登録')
     if submit_btn: #ボタンをクリックしたらコメントを登録する
-        with open('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/sales_data/monthly_sales_comment.txt', 'a') as f:
+        with open(monthly_sales_comment_txt, 'a') as f:
             f.write(f'{comment}')
-    with open('/Users/KondohK/Documents/プログラミング/キノコード課題/Streamlitでビジネスや会計の現状を可視化丨売上分析から財務諸表作成分析するためのツールを作ろう/myenv/management_support_app/data/sales_data/monthly_sales_comment.txt', 'r') as f:
+    with open(monthly_sales_comment_txt, 'r') as f:
         sales_comment = f.read()
         sales_comment
 st.markdown(':red[今回は練習用にデータベースの代わりにtxtファイルを使用しています。]')
